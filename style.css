@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    color: #ffcc00;
+}
+
+.player-info {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.player-info h2 {
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.slot-machine {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+    perspective: 1000px;
+}
+
+.reel {
+    width: 150px;
+    height: 450px;
+    background: linear-gradient(to bottom, #2c3e50, #4a6491);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    border: 3px solid #ffcc00;
+    transform-style: preserve-3d;
+}
+
+.reel-content {
+    position: absolute;
+    width: 100%;
+    transition: transform 2s cubic-bezier(0.17, 0.67, 0.83, 0.67);
+}
+
+.symbol {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    background: linear-gradient(to bottom, #ffcc00, #ff9900);
+    color: #1a1a1a;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button:disabled {
+    background: linear-gradient(to bottom, #666, #999);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.win {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #7fff00;
+    animation: pulse 1s infinite;
+}
+
+.lose {
+    background-color: rgba(255, 0, 0, 0.2);
+    color: #ff4d4d;
+}
+
+.github-link {
+    margin-top: 25px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.github-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.github-link a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+}
+
+.github-link a:hover {
+    color: #ffffff;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .slot-machine {
+        gap: 10px;
+    }
+    
+    .reel {
+        width: 100px;
+        height: 300px;
+    }
+    
+    .symbol {
+        height: 100px;
+        font-size: 60px;
+    }
+    
+    button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .github-link a {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .reel {
+        width: 80px;
+        height: 240px;
+    }
+    
+    .symbol {
+        height: 80px;
+        font-size: 50px;
+    }
+    
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .github-link a {
+        font-size: 0.9rem;
+    }
+}

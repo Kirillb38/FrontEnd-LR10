@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Однорукий бандит</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Однорукий бандит</h1>
+        
+        <div class="player-info">
+            <h2>Гравець: <span id="player-name">-</span></h2>
+        </div>
+        
+        <div class="game-info">
+            <div>Раунд: <span id="round">1</span>/3</div>
+            <div>Перемоги: <span id="wins">0</span></div>
+        </div>
+        
+        <div class="slot-machine">
+            <div class="reel" id="reel1">
+                <div class="reel-content" id="reel-content1"></div>
+            </div>
+            <div class="reel" id="reel2">
+                <div class="reel-content" id="reel-content2"></div>
+            </div>
+            <div class="reel" id="reel3">
+                <div class="reel-content" id="reel-content3"></div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button id="spin-btn">Крутити!</button>
+        </div>
+        
+        <div class="result" id="result"></div>
+        
+        <div class="github-link">
+            <a href="https://github.com/your-username/slot-machine-game" target="_blank">
+                📁 Переглянути код на GitHub
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
